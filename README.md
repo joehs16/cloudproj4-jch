@@ -19,6 +19,13 @@ This serverless pipeline was developed within Cloud9. If one does not already ha
 
 After initializing an instance, it is recommended that one create a new virtual environment within your IDE before beginning to code. In doing so, one can eliminate any potential issues with existing packages. Additionally, combining with a <code>Makefile</code> and a <code>requirement.txt</code> makes this process repeatable.
 
+To establish a python virtual environment in cloud9, run the following commands:
+
+```
+$ python3 -m venv {name of environment}
+$ source {name of environment}/bin/activate
+```
+
 ## Using SAM to set up AWS lambda functions (SAM part 1)
 
 
