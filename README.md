@@ -27,6 +27,14 @@ $ source {name of environment}/bin/activate
 ```
 
 ## Using SAM to set up AWS lambda functions (SAM part 1)
+SAM should be pre-installed into your AWS Cloud9 IDE. To build an AWS lambda function from the terminal, run the command"
+```
+$ sam init
+```
+A guided walkthrough will begin. For this function, select the options:
+* 1 - AWS Quick Start Templates
+* 2 - Image (artifact is an image uploaded to an ECR image repository)
+* 4 - amazon/python3.8-base *\*note that at the time of writing, python 3.8 was the latest version of python*
 
 
 ## Creating the incoming database, SQS, and output S3 bucket
