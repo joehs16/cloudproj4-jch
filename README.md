@@ -2,6 +2,8 @@
 
 This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,CloudWatch Timer,  within AWS utilizing AWS's lambda functions to create a sentiment analysis engine.
 
+![ScreenShot](https://raw.githubusercontent.com/joehs16/cloudproj4-jch/blob/main/assets/flowchart_proj4.jpg)
+
 ## Overview of the tools
 1. DynamoDB
 2. SQS
