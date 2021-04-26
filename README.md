@@ -84,10 +84,28 @@ There are three steps to connecting everything together:
 - second the requirements.txt files must be updated
 - thirdly, the triggers must be attached within AWS Lambda
 
+### Modifying the .py scripts and requirements
 Within the <code>app.py</code> file of the producer lamdbda function, the <code>table</code> name and <code>queue</code> must be made the same as they were created in the steps above. For this repo, I named them "fang" and "producer". See Figure 7.
 
-![producer](/assets/eventBridge.png)
+![producer](/assets/producerAppPy.png)
 <p align="center"><i>Figure 7: Producer's app.py</i></p>
+
+The related <code>requirement.txt</code> file is shown below:
+![producer](/assets/producerReq.png)
+<p align="center"><i>Figure 8: Producer's package requirements</i></p>
+
+Similarly, the <code>app.py</code> file of the consumer lamdbda function needs to be modified. In this file, only the location of the S3 bucket's name needs to be updated.
+
+![producer](/assets/producerAppPy.png)
+<p align="center"><i>Figure 9: Producer's app.py</i></p>
+
+The related <code>requirement.txt</code> file is shown below:
+![producer](/assets/producerReq.png)
+<p align="center"><i>Figure 10: Producer's package requirements</i></p>
+
+### Adding triggers to the Lambda
+
+
 
 ## Using SAM finish setting up AWS lambda fuctions (SAM part 2)
 
