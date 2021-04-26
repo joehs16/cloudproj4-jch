@@ -51,7 +51,7 @@ What <code>producer.py</code> and <code>consumer.py</code> do is shown by the fl
 
 ## Creating the incoming database, SQS, and output S3 bucket
 ### DynamoDB
-To create the database, goto DynamoDB from the AWS portal, select <code>Create table</code>, input a table name, and for this example give a primary key of <code>name</code>. To input objects into the table, select <code>Items</code> and then <code>Create item</code>. For this example, four strings were created:
+To create the database, go to DynamoDB from the AWS portal, select <code>Create table</code>, input a table name, and for this example give a primary key of <code>name</code>. To input objects into the table, select <code>Items</code> and then <code>Create item</code>. For this example, four strings were created:
 - amazon
 - apple
 - facebook
@@ -61,9 +61,17 @@ To create the database, goto DynamoDB from the AWS portal, select <code>Create t
 <p align="center"><i>Figure 3: a table in DynamoDB</i></p>
 
 ### SQS
+From the AWS portal, create an SQS queue. Nothing else needs to be done, but recognize that you will need the URL later for connecting to the .py scripts within the lambda functions.
+![dynamoDB](/assets/SQS.png)
+<p align="center"><i>Figure 4: AWS SQS Queue</i></p>
 
+### S3
+Create an S3 bucket for storage of the sentiment analysis.
 
+### IAM
+Permissions to access and write will be needed for the lambda functions, so if a profile is not available, add the permissions to a role.
 ## Connecting all the parts together
+
 
 ## Using SAM finish setting up AWS lambda fuctions (SAM part 2)
 
