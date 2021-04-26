@@ -1,8 +1,9 @@
 # cloudproj4-jch
 
 This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,CloudWatch Timer,  within AWS utilizing AWS's lambda functions to create a sentiment analysis engine.
-<p style="text-align: center;">
+
 ![ScreenShot](/assets/flowchart_proj4.jpg)
+<p style="text-align: center;">
 *image_caption*
  </p>
 
