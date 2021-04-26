@@ -109,11 +109,11 @@ The related <code>requirement.txt</code> file is shown below:
 ### Adding triggers to the Lambda
 After creating lambdas, triggers needed to be added to hook up the serverless applications created above. For the Producer lambda, an EventBridge trigger needs to be added. During the creation of the trigger, add the trigger that you created above.
 The result should look like this:
-![producerlambda](/assets/producerlambda.png)
+![producerlambda](/assets/producerLambda.png)
 <p align="center"><i>Figure 11: Producer's lambda triggers</i></p>
 
 For the Consumer's lambda, ingesting SQS needs to be added to the trigger. The URL will be needed from the queue that was created above. The results should look like this:
-![consumerlambda](/assets/consumerlambda.png)
+![consumerlambda](/assets/consumerLambda.png)
 <p align="center"><i>Figure 12: Consumer's lambda triggers</i></p>
 
 ## Using SAM finish setting up AWS lambda fuctions (SAM part 2)
