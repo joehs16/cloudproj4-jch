@@ -1,4 +1,4 @@
-# cloudproj4-jch
+# A Serverless NLP Pipeline Within AWS
 
 This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,EventBridge Timer, within AWS utilizing AWS's lambda functions to create a sentiment analysis engine. Code was originally forked by permission from [Noah Gift](https://github.com/noahgift/awslambda)
 
