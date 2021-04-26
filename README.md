@@ -32,10 +32,17 @@ SAM should be pre-installed into your AWS Cloud9 IDE. To build an AWS lambda fun
 $ sam init
 ```
 A guided walkthrough will begin. For this function, select the options:
-* 1 - AWS Quick Start Templates
-* 2 - Image (artifact is an image uploaded to an ECR image repository)
-* 4 - amazon/python3.8-base *\*note that at the time of writing, python 3.8 was the latest version of python*
+* "1 - AWS Quick Start Templates"
+* "2 - Image (artifact is an image uploaded to an ECR image repository)"
+* "4 - amazon/python3.8-base" *\*note that at the time of writing, python 3.8 was the latest version of python*
+* Give your lambda function a name. For this project, the first lambda was named <code>Consumer</code>.
+* Choose the "1 - Hello World Lambda Image Example" template.
+After creation, a directory will be generated with the name that you gave. Within that directory will be a folder named <code>hello_world</code>, containing a file named <code>app.py</code>. Transfer the code contained in <code>consumer.py</code> from this repository's <code>pyscripts</code> folder to the related <code>app.py</code>.
 
+There will be some editing steps needed to connect the dynamoDB, SQS, and output S3 buckets that will go on in these lambdas before deployment, but that will be performed later. At this stage, a second lambda function needs to be created following the same process above, but this time transfering the <code>producer.py</code> instead of the <code>consumer.py</code>.
+
+What <code>producer.py</code> and <code>consumer.py</code> do is shown by the flowchart above:
+* <code>producer.py</code> connects to the database to get a name, in this case a company name (For this example we use the names of [FANG](https://en.wikipedia.org/wiki/Big_Tech).
 
 ## Creating the incoming database, SQS, and output S3 bucket
 
