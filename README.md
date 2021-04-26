@@ -100,15 +100,21 @@ The related <code>requirement.txt</code> file is shown below:
 Similarly, the <code>app.py</code> file of the consumer lamdbda function needs to be modified. In this file, only the location of the S3 bucket's name needs to be updated.
 
 ![producer](/assets/producerAppPy.png)
-<p align="center"><i>Figure 9: Producer's app.py</i></p>
+<p align="center"><i>Figure 9: Consumer's app.py</i></p>
 
 The related <code>requirement.txt</code> file is shown below:
-![producer](/assets/producerReq.png)
-<p align="center"><i>Figure 10: Producer's package requirements</i></p>
+![consumer](/assets/producerReq.png)
+<p align="center"><i>Figure 10: Consumer's package requirements</i></p>
 
 ### Adding triggers to the Lambda
+After creating lambdas, triggers needed to be added to hook up the serverless applications created above. For the Producer lambda, an EventBridge trigger needs to be added. During the creation of the trigger, add the trigger that you created above.
+The result should look like this:
+![producerlambda](/assets/producerlambda.png)
+<p align="center"><i>Figure 11: Producer's lambda triggers</i></p>
 
-
+For the Consumer's lambda, ingesting SQS needs to be added to the trigger. The URL will be needed from the queue that was created above. The results should look like this:
+![consumerlambda](/assets/consumerlambda.png)
+<p align="center"><i>Figure 12: Consumer's lambda triggers</i></p>
 
 ## Using SAM finish setting up AWS lambda fuctions (SAM part 2)
 
