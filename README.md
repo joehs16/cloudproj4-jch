@@ -42,9 +42,19 @@ After creation, a directory will be generated with the name that you gave. Withi
 There will be some editing steps needed to connect the dynamoDB, SQS, and output S3 buckets that will go on in these lambdas before deployment, but that will be performed later. At this stage, a second lambda function needs to be created following the same process above, but this time transfering the <code>producer.py</code> instead of the <code>consumer.py</code>.
 
 What <code>producer.py</code> and <code>consumer.py</code> do is shown by the flowchart above:
-* <code>producer.py</code> connects to the database to get a name, in this case a company name (For this example we use the names of [FANG](https://en.wikipedia.org/wiki/Big_Tech).
+* <code>producer.py</code> connects to the database to get a name, in this case a company name (For this example we use the names of [FANG](https://en.wikipedia.org/wiki/Big_Tech). It then uses CloudWatch to put requests into SQS to feed the 2nd lambda function.
+* <code>consumer.py</code> recieves input from SQS and then uses the Wikipedia API to grab a chunk of text. It then takes that text and applies sentiment analysis using AWS Comprehend. After receiving the sentiment analysis payload, it stores the output to an S3 bucket.
 
 ## Creating the incoming database, SQS, and output S3 bucket
+### DynamoDB
+To create the database, goto DynamoDB from the AWS portal, select <code>Create table</code>, input a table name, and for this example give a primary key of <code>name</code>. To input objects into the table, select <code>Items</code> and then <code>Create item</code>. For this example, four strings were created:
+- amazon
+- apple
+- facebook
+- netflix
+
+
+
 
 ## Connecting all the parts together
 
