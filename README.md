@@ -3,7 +3,7 @@
 This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,CloudWatch Timer,  within AWS utilizing AWS's lambda functions to create a sentiment analysis engine.
 
 ![ScreenShot](/assets/flowchart_proj4.jpg)
-<p align="center"><i>centered text</i></p>
+<p align="center"><i>Figure 1: flowchart of a AWS serverless pipeline</i></p>
 
 ## Overview of the tools
 1. DynamoDB - Amazon's Amazon Web Services (AWS) equivalent to MongoDB. Is very easy to establish and create a database.
@@ -19,7 +19,7 @@ This project is a demonstrates the serverless pipeline within AWS, connecting di
 This serverless pipeline was developed within Cloud9. If one does not already have a cloud9 instance established, go to your AWS portal and search for "cloud9" using the search bar at the top. Create the instance.
 
 ![cloud9](/assets/cloud9_instance.png)
-*image_caption*
+<p align="center"><i>Figure 2: Cloud9 instance landing page</i></p>
 
 After initializing an instance, it is recommended that one create a new virtual environment within your IDE before beginning to code. In doing so, one can eliminate any potential issues with existing packages. Additionally, combining with a <code>Makefile</code> and a <code>requirement.txt</code> makes this process repeatable.
 
@@ -58,7 +58,7 @@ To create the database, goto DynamoDB from the AWS portal, select <code>Create t
 - netflix
 
 ![dynamoDB](/assets/dynamoDB.png)
-
+<p align="center"><i>Figure 3: a table in DynamoDBe</i></p>
 
 
 ## Connecting all the parts together
