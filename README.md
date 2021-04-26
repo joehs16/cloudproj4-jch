@@ -1,6 +1,6 @@
 # cloudproj4-jch
 
-This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,CloudWatch Timer,  within AWS utilizing AWS's lambda functions to create a sentiment analysis engine.
+This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,EventBridge Timer, within AWS utilizing AWS's lambda functions to create a sentiment analysis engine.
 
 ![ScreenShot](/assets/flowchart_proj4.jpg)
 <p align="center"><i>Figure 1: flowchart of a AWS serverless pipeline</i></p>
@@ -9,7 +9,7 @@ This project is a demonstrates the serverless pipeline within AWS, connecting di
 1. DynamoDB - Amazon's Amazon Web Services (AWS) equivalent to MongoDB. Is very easy to establish and create a database.
 2. SQS - Amazon Simpue Queue Service is Amazon's message queuing service that integrates with distributed systems and serverless applications and is an easy way for a tester to ingest test cases into your system
 3. AWS lambda - A serverless compute service that allows you to run code without the need of provisioning or managing servers, allowing one to tie different services together
-4. CloudWatch Timer - A serverless trigger that one can use to set up automated runs in a data pipeline.
+4. EventBridge Timer - A serverless trigger that one can use to set up automated runs in a data pipeline.
 5. AWS Comprehend - An off-the-shelf natural language processing application that one can utilize.
 6. S3 - AWS's cloud storage. Highly scalable.
 7. SAM - AWS Serverless Application Model - an open-source framework that one can use via a command-line tool to build serverless applications within AWS.
@@ -46,7 +46,7 @@ After creation, a directory will be generated with the name that you gave. Withi
 There will be some editing steps needed to connect the dynamoDB, SQS, and output S3 buckets that will go on in these lambdas before deployment, but that will be performed later. At this stage, a second lambda function needs to be created following the same process above, but this time transfering the <code>producer.py</code> instead of the <code>consumer.py</code>.
 
 What <code>producer.py</code> and <code>consumer.py</code> do is shown by the flowchart above:
-* <code>producer.py</code> connects to the database to get a name, in this case a company name (For this example we use the names of [FANG](https://en.wikipedia.org/wiki/Big_Tech). It then uses CloudWatch to put requests into SQS to feed the 2nd lambda function.
+* <code>producer.py</code> connects to the database to get a name, in this case a company name (For this example we use the names of [FANG](https://en.wikipedia.org/wiki/Big_Tech). It then uses EventBridge to put requests into SQS to feed the 2nd lambda function.
 * <code>consumer.py</code> recieves input from SQS and then uses the Wikipedia API to grab a chunk of text. It then takes that text and applies sentiment analysis using AWS Comprehend. After receiving the sentiment analysis payload, it stores the output to an S3 bucket.
 
 ## Creating the incoming database, SQS, and output S3 bucket
@@ -62,14 +62,21 @@ To create the database, go to DynamoDB from the AWS portal, select <code>Create 
 
 ### SQS
 From the AWS portal, create an SQS queue. Nothing else needs to be done, but recognize that you will need the URL later for connecting to the .py scripts within the lambda functions.
-![dynamoDB](/assets/SQS.png)
+![SQS](/assets/SQS.png)
 <p align="center"><i>Figure 4: AWS SQS Queue</i></p>
 
 ### S3
 Create an S3 bucket for storage of the sentiment analysis.
 
 ### IAM
-Permissions to access and write will be needed for the lambda functions, so if a profile is not available, add the permissions to a role.
+Permissions to access and write will be needed for the lambda functions, so if a profile is not available, add the permissions to a role. For this profile, I added administrator permissions to the role.
+![IAM](/assets/IAM_role.png)
+<p align="center"><i>Figure 5: IAM Permissions</i></p>
+
+### EventBridge Trigger
+A trigger can be set to create a repeating process of running this pipeline. To do this
+
+
 ## Connecting all the parts together
 
 
