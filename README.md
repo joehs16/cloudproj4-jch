@@ -74,11 +74,20 @@ Permissions to access and write will be needed for the lambda functions, so if a
 <p align="center"><i>Figure 5: IAM Permissions</i></p>
 
 ### EventBridge Trigger
-A trigger can be set to create a repeating process of running this pipeline. To do this
-
+A trigger can be set to create a repeating process of running this pipeline. To do this, go to AWS's Event Bridge tool and  create a rule. For testing, this pipeline uses a 1-minute timer to see events more quickly. This timeframe is up to the user.
+![IAM](/assets/eventBridge.png)
+<p align="center"><i>Figure 6: EventBridge timer</i></p>
 
 ## Connecting all the parts together
+There are three steps to connecting everything together:
+- first the .py scripts must be modifed,
+- second the requirements.txt files must be updated
+- thirdly, the triggers must be attached within AWS Lambda
 
+Within the <code>app.py</code> file of the producer lamdbda function, the <code>table</code> name and <code>queue</code> must be made the same as they were created in the steps above. For this repo, I named them "fang" and "producer". See Figure 7.
+
+![producer](/assets/eventBridge.png)
+<p align="center"><i>Figure 7: Producer's app.py</i></p>
 
 ## Using SAM finish setting up AWS lambda fuctions (SAM part 2)
 
