@@ -58,7 +58,9 @@ To create the database, goto DynamoDB from the AWS portal, select <code>Create t
 - netflix
 
 ![dynamoDB](/assets/dynamoDB.png)
-<p align="center"><i>Figure 3: a table in DynamoDBe</i></p>
+<p align="center"><i>Figure 3: a table in DynamoDB</i></p>
+
+### SQS
 
 
 ## Connecting all the parts together
