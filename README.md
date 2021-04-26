@@ -2,7 +2,7 @@
 
 This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,CloudWatch Timer,  within AWS utilizing AWS's lambda functions to create a sentiment analysis engine.
 
-![ScreenShot](https://github.com/joehs16/cloudproj4-jch/blob/main/assets/flowchart_proj4.jpg)
+![ScreenShot](/assets/flowchart_proj4.jpg)
 
 ## Overview of the tools
 1. DynamoDB - Amazon's Amazon Web Services (AWS) equivalent to MongoDB. Is very easy to establish and create a database.
