@@ -1,9 +1,6 @@
 # cloudproj4-jch
 
-
-
-
-This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,EventBridge Timer, within AWS utilizing AWS's lambda functions to create a sentiment analysis engine.
+This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,EventBridge Timer, within AWS utilizing AWS's lambda functions to create a sentiment analysis engine. Code was originally forked by permission from [Noah Gift](https://github.com/noahgift/awslambda)
 
 ![ScreenShot](/assets/flowchart_proj4.jpg)
 <p align="center"><i>Figure 1: flowchart of a AWS serverless pipeline</i></p>
@@ -125,4 +122,9 @@ $ sam deploy --guided
 Follow the instructions of the deploy, generally using the defaults.
 
 Lastly, turn the "engine" on, i.e. the EventBridge Trigger. After turning on the trigger, one should see sentiments being pushed to your S3 bucket.
+
+![s3_sentiments](/assets/s3_sentiments.png)
+<p align="center"><i>Figure 13: Output of Pipeline in S3</i></p>
+
 ## Conclusion
+Importantly, do not forget to turn off your EventBridge Trigger after your testing is complete. Because it is made on a 1-minute timer, the timing is good for testing but can cause a lot of unneeded expenses if left on. Hopefully this repo and this readme.md has been helpful in learning how to set up an eventbased data pipeline within AWS.
