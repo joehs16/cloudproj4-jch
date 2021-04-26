@@ -16,7 +16,7 @@ This project is a demonstrates the serverless pipeline within AWS, connecting di
 
 ## Set up
 This serverless pipeline was developed within Cloud9. If one does not already have a cloud9 instance established, go to your AWS portal and search for "cloud9" using the search bar at the top. Create the instance.
-![cloud9](https://github.com/joehs16/cloudproj4-jch/blob/main/assets/cloud9_instance.png)
+![cloud9](/assets/cloud9_instance.png)
 After initializing an instance, it is recommended that one create a new virtual environment within your IDE before beginning to code. In doing so, one can eliminate any potential issues with existing packages. Additionally, combining with a <code>Makefile</code> and a <code>requirement.txt</code> makes this process repeatable.
 
 To establish a python virtual environment in cloud9, run the following commands:
@@ -53,7 +53,7 @@ To create the database, goto DynamoDB from the AWS portal, select <code>Create t
 - facebook
 - netflix
 
-![dynamoDB](https://github.com/joehs16/cloudproj4-jch/blob/main/assets/dynamoDB.png)
+![dynamoDB](/assets/dynamoDB.png)
 
 
 
