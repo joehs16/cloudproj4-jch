@@ -117,5 +117,12 @@ For the Consumer's lambda, ingesting SQS needs to be added to the trigger. The U
 <p align="center"><i>Figure 12: Consumer's lambda triggers</i></p>
 
 ## Using SAM finish setting up AWS lambda fuctions (SAM part 2)
+After hooking all the applications up, return to your cloud9 IDE's terminal. It's time to build the lambdas. Go to the directory where the .yaml file is for the corresponding lambda is. Then using the SAM CLI from the terminal, use the commands:
+```
+$ sam build
+$ sam deploy --guided
+```
+Follow the instructions of the deploy, generally using the defaults.
 
+Lastly, turn the "engine" on, i.e. the EventBridge Trigger. After turning on the trigger, one should see sentiments being pushed to your S3 bucket.
 ## Conclusion
