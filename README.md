@@ -1,6 +1,6 @@
 # A Serverless NLP Pipeline Within AWS
 
-This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB,SQS,EventBridge Timer, and more) within AWS utilizing AWS's lambda functions to create a sentiment analysis engine. Code was originally forked by permission from [Noah Gift](https://github.com/noahgift/awslambda).
+This project is a demonstrates the serverless pipeline within AWS, connecting different services (DynamoDB, SQS, EventBridge Timer, and more) within AWS utilizing AWS's lambda functions to create a sentiment analysis engine. Code was originally forked by permission from [Noah Gift](https://github.com/noahgift/awslambda).
 
 ![ScreenShot](/assets/flowchart_proj4.jpg)
 <p align="center"><i>Figure 1: flowchart of a AWS serverless pipeline</i></p>
